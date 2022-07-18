@@ -1,0 +1,153 @@
+Script started on 2022-07-04 19:19:17-07:00
+bash: export: which: not a function
+]0;autumn.valls@vmcslinuxprod01:~/CS162/a01autumn.valls@vmcslinuxprod01:~/CS162/a01 $ g++ *.cpp -Wall -g -o a01 && ./a01
+[01m[Kmain.cpp:[m[K In function '[01m[Kchar menu()[m[K':
+[01m[Kmain.cpp:78:20:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: '[01m[Kint[m[K' and '[01m[Ksize_t[m[K' {aka '[01m[Klong unsigned int[m[K'} [[01;35m[K-Wsign-compare[m[K]
+  for (int i = 0; [01;35m[Ki < strlen(selection)[m[K; i++) {
+                  [01;35m[K~~^~~~~~~~~~~~~~~~~~~[m[K
+Welcome to my class management program!
+
+Please enter one of the following options:
+        LOAD       - Load roster data from an input file
+        DISPLAY    - Display the current roster data
+        GPA        - Display the average GPA for the roster
+        PCT        - Display the Pass, Fail, and Completion percentages
+        QUIT       - End this program
+Enter option: something
+Unrecognized option "SOMETHING"
+Please enter one of the following options:
+        LOAD       - Load roster data from an input file
+        DISPLAY    - Display the current roster data
+        GPA        - Display the average GPA for the roster
+        PCT        - Display the Pass, Fail, and Completion percentages
+        QUIT       - End this program
+Enter option: L
+Unrecognized option "L"
+Please enter one of the following options:
+        LOAD       - Load roster data from an input file
+        DISPLAY    - Display the current roster data
+        GPA        - Display the average GPA for the roster
+        PCT        - Display the Pass, Fail, and Completion percentages
+        QUIT       - End this program
+Enter option: LOAD
+Enter file name up to 30 characters: roster2
+
+[30 records read from roster2.txt]
+
+Please enter one of the following options:
+        LOAD       - Load roster data from an input file
+        DISPLAY    - Display the current roster data
+        GPA        - Display the average GPA for the roster
+        PCT        - Display the Pass, Fail, and Completion percentages
+        QUIT       - End this program
+Enter option: DISPLAY
+1         Henrietta Smith          G00000026      A  
+2         Jenny Doe                G00000023      A  
+3         John Doe                 G00000001      A  
+4         John Smith               G00000011      A  
+5         Mary Doe                 G00000021      A  
+6         Roberta Doe              G00000025      A  
+7         Sally Smith              G00000022      A  
+8         Wanda Smith              G00000024      A  
+9         Henry Doe                G00000007      AUD
+10        Henry Smith              G00000017      AUD
+11        Jim Doe                  G00000002      B  
+12        Jim Eod                  G11000002      B  
+13        Jim Htims                G11000012      B  
+14        Jim Smith                G00000012      B  
+15        Bob Doe                  G00000003      C  
+16        Bob Eod                  G11000003      C  
+17        Bob Htims                G11000013      C  
+18        Bob Smith                G00000013      C  
+19        Dan Doe                  G00000004      D  
+20        Dan Eod                  G11000004      D  
+21        Dan Htims                G11000014      D  
+22        Dan Smith                G00000014      D  
+23        Caleb Doe                G00000005      F  
+24        Caleb Eod                G11000005      F  
+25        Caleb Htims              G11000015      F  
+26        Caleb Smith              G00000015      F  
+27        Sam Doe                  G00000006      I  
+28        Sam Eod                  G11000006      I  
+29        Sam Htims                G11000016      I  
+30        Sam Smith                G00000016      I  
+Please enter one of the following options:
+        LOAD       - Load roster data from an input file
+        DISPLAY    - Display the current roster data
+        GPA        - Display the average GPA for the roster
+        PCT        - Display the Pass, Fail, and Completion percentages
+        QUIT       - End this program
+Enter option: gpa
+avg gpa: 2.00
+Please enter one of the following options:
+        LOAD       - Load roster data from an input file
+        DISPLAY    - Display the current roster data
+        GPA        - Display the average GPA for the roster
+        PCT        - Display the Pass, Fail, and Completion percentages
+        QUIT       - End this program
+Enter option: pct
+
+         Total Students: 30 (100.0%)
+      Total Completions: 26 (0.00)
+         Passing Grades: 16 (0.00)
+     Non-Passing Grades: 12 (0.00)
+             AUD Grades: 2  (0.00)
+
+Please enter one of the following options:
+        LOAD       - Load roster data from an input file
+        DISPLAY    - Display the current roster data
+        GPA        - Display the average GPA for the roster
+        PCT        - Display the Pass, Fail, and Completion percentages
+        QUIT       - End this program
+Enter option: load
+Enter file name up to 30 characters: roster1
+
+[26 records read from roster1.txt]
+
+Please enter one of the following options:
+        LOAD       - Load roster data from an input file
+        DISPLAY    - Display the current roster data
+        GPA        - Display the average GPA for the roster
+        PCT        - Display the Pass, Fail, and Completion percentages
+        QUIT       - End this program
+Enter option: display
+1         Henrietta Smith          G00000026      A  
+2         Jenny Doe                G00000023      A  
+3         John Doe                 G00000001      A  
+4         John Smith               G00000011      A  
+5         Mary Doe                 G00000021      A  
+6         Roberta Doe              G00000025      A  
+7         Sally Smith              G00000022      A  
+8         Wanda Smith              G00000024      A  
+9         Henry Doe                G00000007      AUD
+10        Henry Smith              G00000017      AUD
+11        Jim Doe                  G00000002      B  
+12        Jim Smith                G00000012      B  
+13        Bob Doe                  G00000003      C  
+14        Bob Smith                G00000013      C  
+15        Dan Doe                  G00000004      D  
+16        Dan Smith                G00000014      D  
+17        Caleb Doe                G00000005      F  
+18        Caleb Smith              G00000015      F  
+19        Sam Doe                  G00000006      I  
+20        Sam Smith                G00000016      I  
+21        Billy Doe                G00000010      NP 
+22        Billy Smith              G00000020      NP 
+23        Rupert Doe               G00000009      P  
+24        Rupert Smith             G00000019      P  
+25        James Doe                G00000008      W  
+26        James Smith              G00000018      W  
+Please enter one of the following options:
+        LOAD       - Load roster data from an input file
+        DISPLAY    - Display the current roster data
+        GPA        - Display the average GPA for the roster
+        PCT        - Display the Pass, Fail, and Completion percentages
+        QUIT       - End this program
+Enter option: qUiT
+[done]
+]0;autumn.valls@vmcslinuxprod01:~/CS162/a01autumn.valls@vmcslinuxprod01:~/CS162/a01 $ wxit
+bash: wxit: command not found
+]0;autumn.valls@vmcslinuxprod01:~/CS162/a01autumn.valls@vmcslinuxprod01:~/CS162/a01 $ exit
+exit
+
+Script done on 2022-07-04 19:21:54-07:00
