@@ -1,8 +1,17 @@
-Script started on 2022-07-04 19:19:17-07:00
-bash: export: which: not a function
-]0;autumn.valls@vmcslinuxprod01:~/CS162/a01autumn.valls@vmcslinuxprod01:~/CS162/a01 $ g++ *.cpp -Wall -g -o a01 && ./a01
+Script started on 2022-07-18 03:50:21-07:00
+]0;autumn.valls@vmcslinuxprod01:~/CS162/a02autumn.valls@vmcslinuxprod01:~/CS162/a02 $ g++ - *.cpp -Wall -g -o a02 ^=^=    ^ && ./a02
+[01m[Kmain.cpp:[m[K In function '[01m[Kint main()[m[K':
+[01m[Kmain.cpp:27:32:[m[K [01;35m[Kwarning: [m[KISO C++ forbids converting a string constant to '[01m[Kchar*[m[K' [[01;35m[K-Wwrite-strings[m[K]
+     openFile(inFile, "G-Number"[01;35m[K)[m[K;
+                                [01;35m[K^[m[K
+[01m[Kmain.cpp:34:29:[m[K [01;35m[Kwarning: [m[KISO C++ forbids converting a string constant to '[01m[Kchar*[m[K' [[01;35m[K-Wwrite-strings[m[K]
+     openFile(inFile, "names"[01;35m[K)[m[K;
+                             [01;35m[K^[m[K
+[01m[Kmain.cpp:41:34:[m[K [01;35m[Kwarning: [m[KISO C++ forbids converting a string constant to '[01m[Kchar*[m[K' [[01;35m[K-Wwrite-strings[m[K]
+     openFile(inFile, "assignment"[01;35m[K)[m[K;
+                                  [01;35m[K^[m[K
 [01m[Kmain.cpp:[m[K In function '[01m[Kchar menu()[m[K':
-[01m[Kmain.cpp:78:20:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: '[01m[Kint[m[K' and '[01m[Ksize_t[m[K' {aka '[01m[Klong unsigned int[m[K'} [[01;35m[K-Wsign-compare[m[K]
+[01m[Kmain.cpp:132:20:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: '[01m[Kint[m[K' and '[01m[Ksize_t[m[K' {aka '[01m[Klong unsigned int[m[K'} [[01;35m[K-Wsign-compare[m[K]
   for (int i = 0; [01;35m[Ki < strlen(selection)[m[K; i++) {
                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~[m[K
 Welcome to my class management program!
@@ -11,143 +20,956 @@ Please enter one of the following options:
         LOAD       - Load roster data from an input file
         DISPLAY    - Display the current roster data
         GPA        - Display the average GPA for the roster
+        GRADE      - Display grade information for one student
         PCT        - Display the Pass, Fail, and Completion percentages
+        REMOVE     - Remove item from a list
+        ADD        - Add item to a list
         QUIT       - End this program
-Enter option: something
-Unrecognized option "SOMETHING"
-Please enter one of the following options:
-        LOAD       - Load roster data from an input file
-        DISPLAY    - Display the current roster data
-        GPA        - Display the average GPA for the roster
-        PCT        - Display the Pass, Fail, and Completion percentages
-        QUIT       - End this program
-Enter option: L
-Unrecognized option "L"
-Please enter one of the following options:
-        LOAD       - Load roster data from an input file
-        DISPLAY    - Display the current roster data
-        GPA        - Display the average GPA for the roster
-        PCT        - Display the Pass, Fail, and Completion percentages
-        QUIT       - End this program
-Enter option: LOAD
-Enter file name up to 30 characters: roster2
+Enter option: load
+Enter file name of student G-Number file up to 30 characters: gnums.txt
 
-[30 records read from roster2.txt]
+[26 G-Numbers loaded]
+
+Enter file name of student names file up to 30 characters: names.txt
+
+[26 names added to roster]
+
+Enter file name of student assignment file up to 30 characters: assignments.txt
+
+[227 assignments added]
 
 Please enter one of the following options:
         LOAD       - Load roster data from an input file
         DISPLAY    - Display the current roster data
         GPA        - Display the average GPA for the roster
+        GRADE      - Display grade information for one student
         PCT        - Display the Pass, Fail, and Completion percentages
+        REMOVE     - Remove item from a list
+        ADD        - Add item to a list
         QUIT       - End this program
-Enter option: DISPLAY
-1         Henrietta Smith          G00000026      A  
-2         Jenny Doe                G00000023      A  
-3         John Doe                 G00000001      A  
-4         John Smith               G00000011      A  
-5         Mary Doe                 G00000021      A  
-6         Roberta Doe              G00000025      A  
-7         Sally Smith              G00000022      A  
-8         Wanda Smith              G00000024      A  
-9         Henry Doe                G00000007      AUD
-10        Henry Smith              G00000017      AUD
-11        Jim Doe                  G00000002      B  
-12        Jim Eod                  G11000002      B  
-13        Jim Htims                G11000012      B  
-14        Jim Smith                G00000012      B  
-15        Bob Doe                  G00000003      C  
-16        Bob Eod                  G11000003      C  
-17        Bob Htims                G11000013      C  
-18        Bob Smith                G00000013      C  
-19        Dan Doe                  G00000004      D  
-20        Dan Eod                  G11000004      D  
-21        Dan Htims                G11000014      D  
-22        Dan Smith                G00000014      D  
-23        Caleb Doe                G00000005      F  
-24        Caleb Eod                G11000005      F  
-25        Caleb Htims              G11000015      F  
-26        Caleb Smith              G00000015      F  
-27        Sam Doe                  G00000006      I  
-28        Sam Eod                  G11000006      I  
-29        Sam Htims                G11000016      I  
-30        Sam Smith                G00000016      I  
+Enter option: display
+1. G00000026 Henrietta Smith Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+2. G00000023 Jenny Doe Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+3. G00000001 John Doe Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+4. G00000011 John Smith Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+5. G00000021 Mary Doe Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+6. G00000025 Roberta Doe Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+7. G00000022 Sally Smith Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+8. G00000024 Wanda Smith Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+9. G00000007 Henry Doe Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+10. G00000017 Henry Smith Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+11. G00000002 Jim Doe Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+12. G00000012 Jim Smith Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+13. G00000003 Bob Doe Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+14. G00000013 Bob Smith Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+15. G00000004 Dan Doe Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+16. G00000014 Dan Smith Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+17. G00000005 Caleb Doe Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+18. G00000015 Caleb Smith Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+19. G00000006 Sam Doe Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+20. G00000016 Sam Smith Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+21. G00000010 Billy Doe Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+22. G00000020 Billy Smith Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+23. G00000009 Rupert Doe Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+24. G00000019 Rupert Smith Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+25. G00000008 James Doe Final Grade: A
+    4 (0.1%) Structs
+    4 (0.1%) Classes
+    4 (0.1%) Dynamic Memory
+    4 (0.1%) Linked Lists 1
+    4 (0.1%) Linked Lists 2
+    4 (0.125%) Assessment 1
+    4 (0.125%) Assessment 2
+    4 (0.125%) Assessment 3
+    4 (0.125%) Assessment 4
+26. G00000018 James Smith Final Grade: F
+    4 (0.1%) Classes
+    4 (0.125%) Assessment 4
 Please enter one of the following options:
         LOAD       - Load roster data from an input file
         DISPLAY    - Display the current roster data
         GPA        - Display the average GPA for the roster
+        GRADE      - Display grade information for one student
         PCT        - Display the Pass, Fail, and Completion percentages
+        REMOVE     - Remove item from a list
+        ADD        - Add item to a list
         QUIT       - End this program
 Enter option: gpa
-avg gpa: 2.00
+
+Average GPA for 26 students: 3.88
+
 Please enter one of the following options:
         LOAD       - Load roster data from an input file
         DISPLAY    - Display the current roster data
         GPA        - Display the average GPA for the roster
+        GRADE      - Display grade information for one student
         PCT        - Display the Pass, Fail, and Completion percentages
+        REMOVE     - Remove item from a list
+        ADD        - Add item to a list
+        QUIT       - End this program
+Enter option: grade
+Enter Student Name of Student G-Number: G00000023
+G00000023 Jenny Doe Grade: A
+        Structs Weight: 10.00%  Score: 4 Contribution: 0.40
+        Classes Weight: 10.00%  Score: 4 Contribution: 0.40
+        Dynamic Memory Weight: 10.00%  Score: 4 Contribution: 0.40
+        Linked Lists 1 Weight: 10.00%  Score: 4 Contribution: 0.40
+        Linked Lists 2 Weight: 10.00%  Score: 4 Contribution: 0.40
+        Assessment 1 Weight: 12.50%  Score: 4 Contribution: 0.50
+        Assessment 2 Weight: 12.50%  Score: 4 Contribution: 0.50
+        Assessment 3 Weight: 12.50%  Score: 4 Contribution: 0.50
+        Assessment 4 Weight: 12.50%  Score: 4 Contribution: 0.50
+            Total: 4.00
+Please enter one of the following options:
+        LOAD       - Load roster data from an input file
+        DISPLAY    - Display the current roster data
+        GPA        - Display the average GPA for the roster
+        GRADE      - Display grade information for one student
+        PCT        - Display the Pass, Fail, and Completion percentages
+        REMOVE     - Remove item from a list
+        ADD        - Add item to a list
         QUIT       - End this program
 Enter option: pct
 
-         Total Students: 30 (100.0%)
-      Total Completions: 26 (0.00)
-         Passing Grades: 16 (0.00)
-     Non-Passing Grades: 12 (0.00)
-             AUD Grades: 2  (0.00)
+         Total Students: 26 (100.0%)
+      Total Completions: 25.00(96.1538%)
+         Passing Grades: 25.0000(96.1538%)
+                                                                                                                                                                                                                                      Non-Passing Grades: 0.0000(0.0000%)
+             AUD Grades: 0.0000(0.0000%)
 
 Please enter one of the following options:
         LOAD       - Load roster data from an input file
         DISPLAY    - Display the current roster data
         GPA        - Display the average GPA for the roster
+        GRADE      - Display grade information for one student
         PCT        - Display the Pass, Fail, and Completion percentages
+        REMOVE     - Remove item from a list
+        ADD        - Add item to a list
         QUIT       - End this program
-Enter option: load
-Enter file name up to 30 characters: roster1
-
-[26 records read from roster1.txt]
-
+Enter option: tr  remove
+Enter:
+      A or a  - for Assignment
+      S or s  - for Student
+      B or b  - return to previous
+Enter choice: a
+Enter student name: Jenny Doe
+Enter assignment name: Structs
+Removing all records of "Structs" for "Jenny Doe"!
+done!
+Enter:
+      A or a  - for Assignment
+      S or s  - for Student
+      B or b  - return to previous
+Enter choice: s
+Enter student name: John Doe       ames Doe
+Removing all records of "James Doe"!
+Enter:
+      A or a  - for Assignment
+      S or s  - for Student
+      B or b  - return to previous
+Enter choice: b
 Please enter one of the following options:
         LOAD       - Load roster data from an input file
         DISPLAY    - Display the current roster data
         GPA        - Display the average GPA for the roster
+        GRADE      - Display grade information for one student
         PCT        - Display the Pass, Fail, and Completion percentages
+        REMOVE     - Remove item from a list
+        ADD        - Add item to a list
+        QUIT       - End this program
+Enter option: grade
+Enter Student Name of Student G-Number: Jenny Doe
+G00000023 Jenny Doe Grade: B
+        Classes Weight: 10.0000%  Score: 4 Contribution: 0.4000
+        Dynamic Memory Weight: 10.0000%  Score: 4 Contribution: 0.4000
+        Linked Lists 1 Weight: 10.0000%  Score: 4 Contribution: 0.4000
+        Linked Lists 2 Weight: 10.0000%  Score: 4 Contribution: 0.4000
+        Assessment 1 Weight: 12.5000%  Score: 4 Contribution: 0.5000
+        Assessment 2 Weight: 12.5000%  Score: 4 Contribution: 0.5000
+        Assessment 3 Weight: 12.5000%  Score: 4 Contribution: 0.5000
+        Assessment 4 Weight: 12.5000%  Score: 4 Contribution: 0.5000
+            Total: 3.6000
+Please enter one of the following options:
+        LOAD       - Load roster data from an input file
+        DISPLAY    - Display the current roster data
+        GPA        - Display the average GPA for the roster
+        GRADE      - Display grade information for one student
+        PCT        - Display the Pass, Fail, and Completion percentages
+        REMOVE     - Remove item from a list
+        ADD        - Add item to a list
+        QUIT       - End this program
+Enter option: add
+Enter:
+      A or a  - for Assignment
+      S or s  - for Student
+      B or b  - return to previous
+Enter choice: s
+Enter student name: Doub g Jones
+Enter G-Number for Doug Jones: G445544444 
+Enter:
+      A or a  - for Assignment
+      S or s  - for Student
+      B or b  - return to previous
+Enter choice: b
+Please enter one of the following options:
+        LOAD       - Load roster data from an input file
+        DISPLAY    - Display the current roster data
+        GPA        - Display the average GPA for the roster
+        GRADE      - Display grade information for one student
+        PCT        - Display the Pass, Fail, and Completion percentages
+        REMOVE     - Remove item from a list
+        ADD        - Add item to a list
         QUIT       - End this program
 Enter option: display
-1         Henrietta Smith          G00000026      A  
-2         Jenny Doe                G00000023      A  
-3         John Doe                 G00000001      A  
-4         John Smith               G00000011      A  
-5         Mary Doe                 G00000021      A  
-6         Roberta Doe              G00000025      A  
-7         Sally Smith              G00000022      A  
-8         Wanda Smith              G00000024      A  
-9         Henry Doe                G00000007      AUD
-10        Henry Smith              G00000017      AUD
-11        Jim Doe                  G00000002      B  
-12        Jim Smith                G00000012      B  
-13        Bob Doe                  G00000003      C  
-14        Bob Smith                G00000013      C  
-15        Dan Doe                  G00000004      D  
-16        Dan Smith                G00000014      D  
-17        Caleb Doe                G00000005      F  
-18        Caleb Smith              G00000015      F  
-19        Sam Doe                  G00000006      I  
-20        Sam Smith                G00000016      I  
-21        Billy Doe                G00000010      NP 
-22        Billy Smith              G00000020      NP 
-23        Rupert Doe               G00000009      P  
-24        Rupert Smith             G00000019      P  
-25        James Doe                G00000008      W  
-26        James Smith              G00000018      W  
+1. G00000026 Henrietta Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+2. G00000023 Jenny Doe Final Grade: B
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+3. G00000001 John Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+4. G00000011 John Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+5. G00000021 Mary Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+6. G00000025 Roberta Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+7. G00000022 Sally Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+8. G00000024 Wanda Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+9. G00000007 Henry Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+10. G00000017 Henry Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+11. G00000002 Jim Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+12. G00000012 Jim Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+13. G00000003 Bob Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+14. G00000013 Bob Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+15. G00000004 Dan Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+16. G00000014 Dan Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+17. G00000005 Caleb Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+18. G00000015 Caleb Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+19. G00000006 Sam Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+20. G00000016 Sam Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+21. G00000010 Billy Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+22. G00000020 Billy Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+23. G00000009 Rupert Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+24. G00000019 Rupert Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+25. G00000018 James Smith Final Grade: F
+    4 (0.1000%) Classes
+    4 (0.1250%) Assessment 4
+26. G44554444 Doug Jones Final Grade: F
 Please enter one of the following options:
         LOAD       - Load roster data from an input file
         DISPLAY    - Display the current roster data
         GPA        - Display the average GPA for the roster
+        GRADE      - Display grade information for one student
         PCT        - Display the Pass, Fail, and Completion percentages
+        REMOVE     - Remove item from a list
+        ADD        - Add item to a list
         QUIT       - End this program
-Enter option: qUiT
+Enter option: add
+Enter:
+      A or a  - for Assignment
+      S or s  - for Student
+      B or b  - return to previous
+Enter choice: a
+Enter student name: Dougl  Jones
+Enter assignment name: Structs
+Enter assignment weight: .5
+Enter assignment grade: 4
+Enter:
+      A or a  - for Assignment
+      S or s  - for Student
+      B or b  - return to previous
+Enter choice: b
+Please enter one of the following options:
+        LOAD       - Load roster data from an input file
+        DISPLAY    - Display the current roster data
+        GPA        - Display the average GPA for the roster
+        GRADE      - Display grade information for one student
+        PCT        - Display the Pass, Fail, and Completion percentages
+        REMOVE     - Remove item from a list
+        ADD        - Add item to a list
+        QUIT       - End this program
+Enter option: display
+1. G00000026 Henrietta Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+2. G00000023 Jenny Doe Final Grade: B
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+3. G00000001 John Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+4. G00000011 John Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+5. G00000021 Mary Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+6. G00000025 Roberta Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+7. G00000022 Sally Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+8. G00000024 Wanda Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+9. G00000007 Henry Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+10. G00000017 Henry Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+11. G00000002 Jim Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+12. G00000012 Jim Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+13. G00000003 Bob Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+14. G00000013 Bob Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+15. G00000004 Dan Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+16. G00000014 Dan Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+17. G00000005 Caleb Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+18. G00000015 Caleb Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+19. G00000006 Sam Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+20. G00000016 Sam Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+21. G00000010 Billy Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+22. G00000020 Billy Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+23. G00000009 Rupert Doe Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+24. G00000019 Rupert Smith Final Grade: A
+    4 (0.1000%) Structs
+    4 (0.1000%) Classes
+    4 (0.1000%) Dynamic Memory
+    4 (0.1000%) Linked Lists 1
+    4 (0.1000%) Linked Lists 2
+    4 (0.1250%) Assessment 1
+    4 (0.1250%) Assessment 2
+    4 (0.1250%) Assessment 3
+    4 (0.1250%) Assessment 4
+25. G00000018 James Smith Final Grade: F
+    4 (0.1000%) Classes
+    4 (0.1250%) Assessment 4
+26. G44554444 Doug Jones Final Grade: C
+    4 (0.5000%) Structs
+Please enter one of the following options:
+        LOAD       - Load roster data from an input file
+        DISPLAY    - Display the current roster data
+        GPA        - Display the average GPA for the roster
+        GRADE      - Display grade information for one student
+        PCT        - Display the Pass, Fail, and Completion percentages
+        REMOVE     - Remove item from a list
+        ADD        - Add item to a list
+        QUIT       - End this program
+Enter option: quit
 [done]
-]0;autumn.valls@vmcslinuxprod01:~/CS162/a01autumn.valls@vmcslinuxprod01:~/CS162/a01 $ wxit
-bash: wxit: command not found
-]0;autumn.valls@vmcslinuxprod01:~/CS162/a01autumn.valls@vmcslinuxprod01:~/CS162/a01 $ exit
+]0;autumn.valls@vmcslinuxprod01:~/CS162/a02autumn.valls@vmcslinuxprod01:~/CS162/a02 $ exit
 exit
 
-Script done on 2022-07-04 19:21:54-07:00
+Script done on 2022-07-18 03:55:28-07:00

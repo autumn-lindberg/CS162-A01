@@ -1,147 +1,144 @@
+//////////////////////////////////////////////////////////////////////////////
+// Name:        Autumn Valls
+// Assignment:  Assignment 2 - Classes
+// Date:        7/27/2022
+// Description: This file has the implementations of the member functions
+//              for the Student class
+// Sources:     None
+//////////////////////////////////////////////////////////////////////////////
 #include "student.h"
+
 using namespace std;
 
-Student initStudent() {
-	Student newStudent = {};
-	memset(newStudent.name, 0, sizeof(newStudent.name));
-	memset(newStudent.gnum, 0, sizeof(newStudent.name));
-	memset(newStudent.grade, 0, sizeof(newStudent.name));
-	return newStudent;
+// constructors
+Student::Student() {
+	memset(this->name, 0, sizeof(this->name));
+	memset(this->gnum, 0, sizeof(this->gnum));
+	this->grade = 0;
+	this->size = 0;
+	this->capacity = MAX_SUBMISSIONS;
 }
 
-void load(ifstream & inFile, Student roster[], int & size, int capacity) {
-	size = 0;
-	for (int i = 0; i < capacity; i++) {
-		roster[i] = initStudent();
+Student::Student(char myName[], char myGnum[]) {
+	strcpy(this->name, myName);
+	strcpy(this->gnum, myGnum);
+	this->size = 0;
+	this->grade = 0;
+	this->capacity = MAX_SUBMISSIONS;
+}
+
+Student::Student(char myGnum[]) {
+	memset(this->name, 0, sizeof(this->name));
+	strcpy(this->gnum, myGnum);
+	this->size = 0;
+	this->grade = 0;
+}
+
+// destructor
+Student::~Student() {
+	memset(this->name, 0, sizeof(this->name));
+	memset(this->gnum, 0, sizeof(this->gnum));
+	this->grade = 0;
+	this->size = 0;
+	this->capacity = MAX_SUBMISSIONS;
+}
+
+// getters
+void Student::getName(char myName[]) {
+	strcpy(myName, this->name);
+}
+
+void Student::getGnum(char myGnum[]) {
+	strcpy(myGnum, this->gnum);
+}
+
+float Student::getGrade() {
+	float grade = 0;
+	for (int i = 0; i < this->size; i++) {
+		grade += this->submissions[i].getGrade() * this->submissions[i].getWeight();
 	}
-	roster[size] = initStudent();
-	inFile.getline(roster[size].name, MAX_CHARS, ',');
-	inFile.getline(roster[size].gnum, MAX_CHARS, ',');
-	inFile.getline(roster[size].grade, MAX_CHARS, '\n');
-	while (!inFile.eof() && size < capacity) {
-		size++;
-		roster[size] = initStudent();
-		inFile.getline(roster[size].name, 256, ',');
-		inFile.getline(roster[size].gnum, 256, ',');
-		inFile.getline(roster[size].grade, 256, '\n');
+	return grade;
+}
+
+int Student::getSize() {
+	return this->size;
+}
+
+int Student::getCapacity() {
+	return this->capacity;
+}
+
+// setters
+void Student::setName(char newName[]) {
+	strcpy(this->name, newName);
+}
+
+void Student::setGnum(char newGnum[]) {
+	strcpy(this->gnum, newGnum);
+}
+
+void Student::setGrade(int newGrade) {
+	this->grade = newGrade;
+}
+
+// this function displays the data of a student's submitted assignments
+void Student::displayAssignments() {
+	char gottenAssignment[MAX_CHARS + 1];
+	for (int i = 0; i < this->size; i++) {
+		this->submissions[i].getName(gottenAssignment);
+		cout << "    " << this->submissions[i].getGrade();
+		cout << " (" << this->submissions[i].getWeight();
+		cout << "%) " << gottenAssignment << endl;
 	}
 }
 
-void display(Student roster[], int size) {
-	if (size == 0) {
+// given the Assignment parameter, this function adds it to a student's
+// submissions array
+void Student::addSubmission(Assignment a) {
+	this->submissions[this->size++] = a;
+}
+
+// given the assignment name parameter, this function searches for a
+// student's assignment by the given name and removes it from their
+// submissions array
+void Student::removeAssignment(char assignmentName[]) {
+
+	bool assignmentFound = false;
+	char gottenAssignment[MAX_CHARS + 1];
+
+	for (int i = 0; i < this->size; i++) {
+		this->submissions[i].getName(gottenAssignment);
+		if (strcmp(gottenAssignment, assignmentName) == 0) {
+			assignmentFound = true;
+			for (int j = i; j < size; j++) {
+				this->submissions[j] = this->submissions[j + 1];
+			}
+		submissions[size] = Assignment();
+		this->size--;
+		}
+	}
+	if (assignmentFound == false) {
+		cout << "Assignment " << assignmentName << " not found!" << endl;
+	}
+}
+
+// this is an alternative way to display assignment data used specifically for
+// the GRADE function in main()
+void Student::displayGrades() {
+
+	float total = 0;
+	char gottenAssignment[MAX_CHARS + 1];
+
+	for (int i = 0; i < this->size; i++) {
+		this->submissions[i].getName(gottenAssignment);
+		cout << "        ";
+		cout << gottenAssignment;
+		cout << " Weight: " << this->submissions[i].getWeight() * 100 << "%";
+		cout << "  Score: " << this->submissions[i].getGrade();
+		cout << " Contribution: " << this->submissions[i].getGrade() * this->submissions[i].getWeight();
 		cout << endl;
-		cout << "No rosters loaded." << endl;
-		cout << endl;
-		return;
+		total += this->submissions[i].getGrade() * this->submissions[i].getWeight();
 	}
-	for (int i = 0; i < size; i++) {
-		cout << setw(10) << left << i + 1;
-		cout << setw(25) << left << roster[i].name;
-		cout << setw(15) << left << roster[i].gnum;
-		cout << setw(3) << left << roster[i].grade << endl;
-	}
+	cout << "            Total: " << total << endl;
 }
 
-void gpa(Student roster[], int size) {
-	double averageGPA = 0;
-	double sizeCopy = 1.0 * size;
-	for (int i = 0; i < size; i++) {
-		if (strcmp(roster[i].grade, "A") == 0) {
-			averageGPA += 4;
-		}
-		if (strcmp(roster[i].grade, "B") == 0) {
-			averageGPA += 3;
-		}
-		if (strcmp(roster[i].grade, "C") == 0) {
-			averageGPA += 2;
-		}
-		if (strcmp(roster[i].grade, "D") == 0) {
-			averageGPA += 1;
-		}
-		if (strcmp(roster[i].grade, "P") == 0) {
-			averageGPA += 2;
-		}
-		if (strcmp(roster[i].grade, "AUD") == 0) {
-			sizeCopy--;
-		}
-	}
-	averageGPA = averageGPA / sizeCopy;
-
-	cout << endl;
-	cout << setprecision(2) << fixed << "Average GPA for " << static_cast<int>(sizeCopy) << " students: ";
-	cout << averageGPA << endl;
-	cout << endl;
-}
-
-void pct(Student roster[], int size) {
-	double completionPercentage = 0;
-	double passingPercentage = 0;
-	double nonPassingPercentage = 0;
-	double auditPercentage = 0;
-	int numComplete = 0;
-	int numPassing = 0;
-	int numNotPassing = 0;
-	int numAuditing = 0;
-
-	for (int i = 0; i < size; i++) {
-		if (strcmp(roster[i].grade, "I") == 0) {
-			numNotPassing += 1;
-		}
-		if (strcmp(roster[i].grade, "A") == 0) {
-			numComplete += 1;
-			numPassing += 1;
-		}
-		if (strcmp(roster[i].grade, "B") == 0) {
-			numComplete += 1;
-			numPassing += 1;
-		}
-		if (strcmp(roster[i].grade, "C") == 0) {
-			numComplete += 1;
-			numPassing += 1;
-		}
-		if (strcmp(roster[i].grade, "D") == 0) {
-			numComplete += 1;
-			numNotPassing += 1;
-		}
-		if (strcmp(roster[i].grade, "F") == 0) {
-			numComplete += 1;
-			numNotPassing += 1;
-		}
-		if (strcmp(roster[i].grade, "NP") == 0) {
-			numComplete += 1;
-			numNotPassing += 1;
-		}
-		if (strcmp(roster[i].grade, "P") == 0) {
-			numComplete += 1;
-			numPassing += 1;
-		}
-		if (strcmp(roster[i].grade, "W") == 0) {
-			numNotPassing += 1;
-		}
-		if (strcmp(roster[i].grade, "AUD") == 0) { 
-			numComplete += 1;
-			numAuditing += 1;
-		}
-	}
-
-	completionPercentage = numComplete / size;
-	passingPercentage = numPassing / size;
-	nonPassingPercentage = numNotPassing / size;
-	auditPercentage = numAuditing / size;
-
-	cout << endl; cout << setw(25) << right << "Total Students: "; 
-	cout << setw(3) << left << size << "(100.0%)" << endl;
-	cout << setw(25) << right << "Total Completions: ";
-	cout << setw(3) << left << numComplete;
-	cout << "(" << completionPercentage << ")" << endl;
-	cout << setw(25) << right << "Passing Grades: ";
-	cout << setw(3) << left << numPassing;
-	cout << "(" << passingPercentage << ")" << endl;
-	cout << setw(25) << right << "Non-Passing Grades: ";
-	cout << setw(3) << left << numNotPassing;
-	cout << "(" << nonPassingPercentage << ")" << endl;
-	cout << setw(25) << right << "AUD Grades: ";
-	cout << setw(3) << left << numAuditing;
-	cout << "(" << auditPercentage << ")" << endl;
-	cout << endl;
-}
